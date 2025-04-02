@@ -23,14 +23,28 @@ export default {
             p.setup = () => {
                 p.createCanvas(500, 500);
                 p.background(255);
+                
+            const xWidth = p.width/10;
+            const yHeight = p.height/10;
+
+            for (let v = 0; v < p.height; v += yHeight) {
+                // horizontal
+                for (let i = 0; i < p.width; i += xWidth) {
+                    p.fill(p.random(0, 255), p.random(0, 255), p.random(0, 255));
+                    p.circle(i+xWidth/2, v+yHeight/2, p.random(0, 50));
+                }
+            }
+
             };
 
             p.draw = () => {
 
+                
+
             };
 
             p.mousePressed = () => {
-                console.log("Mouse pressed");
+                p.setup();
             }
         }
     }
