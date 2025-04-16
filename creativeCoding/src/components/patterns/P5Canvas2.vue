@@ -1,5 +1,5 @@
 <template>
-    <div ref="canvasContainer"></div>
+    <div ref="canvasContainer2"></div>
 </template>
 
 <script>
@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         createCanvas() {
-            this.p = new p5(this.sketch, this.$refs.canvasContainer);
+            this.p = new p5(this.sketch, this.$refs.canvasContainer2);
         },
         sketch(p) {
             p.setup = () => {
