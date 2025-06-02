@@ -6,6 +6,7 @@ import AgentView from "../views/AgentView.vue";
 import LSystemView from "../views/LSystemView.vue";
 import TextGeneratorView from "../views/TextGeneratorView.vue";
 import ConwaysGameView from "../views/ConwaysGameView.vue";
+import AsciiGeneratorView from "../views/AsciiGeneratorView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
             path: "/conways-game",
             name: "conways-game",
             component: ConwaysGameView,
+        },
+        {
+            path: "/ascii",
+            name: "ascii",
+            component: AsciiGeneratorView,
         },
     ],
 });

@@ -14,6 +14,7 @@ import { RouterLink, RouterView } from "vue-router";
                     <li><RouterLink to="/l-systems">L-Systems</RouterLink></li>
                     <li><RouterLink to="/text-generator">Text generator</RouterLink></li>
                     <li><RouterLink to="/conways-game">Conways Game of Life</RouterLink></li>
+                    <li><RouterLink to="/ascii">ASCII Generator</RouterLink></li>
                 </ul>
             </nav>
         </div>
