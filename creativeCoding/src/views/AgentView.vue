@@ -1,52 +1,39 @@
 <script>
+import Agent1 from "../components/agents/Agent1.vue";
+import Agent2 from "../components/agents/Agent2.vue";
+import Agent3 from "../components/agents/Agent3.vue";
 import p5 from "p5";
 export default {
+    components: {
+        Agent1,
+        Agent2,
+        Agent3,
+    },
     data() {
-        return {
-            
-        }
+        return {};
     },
-    mounted() {
-        this.createCanvas();
-    },
-    beforeDestroy() {
-        if (this.p) {
-            this.p.remove();
-        }
-    },
-    methods: {
-        createCanvas() {
-            this.p = new p5(this.sketch, this.$refs.canvasContainer);
-        },
-        sketch(p) {
-            p.preload = () => {
-            };
-            p.setup = () => {
-                p.createCanvas(400, 400);
-            };
-            p.draw = () => {
-                p.background(200)
-                for (let i = 0; i < p.width; i+=4) {
-                    p.noFill()
-                    p.square(0, 0, i)
-                }
-                p.fill(200);
-                p.circle(p.width/2, p.height/2, 30);
-            };
-            p.mousePressed = () => {
-
-            };
-        }
-    }
-}
-
+    methods: {},
+};
 </script>
-
 
 <template>
     <h1>Agent</h1>
-    <div ref="canvasContainer"></div>
-</template>
+    <main>
+        <section>
+            <h1>Shape looking like a "pipe"</h1>
+            <Agent1 />
+        </section>
 
+        <section>
+            <h1>Individual agent</h1>
+            <Agent2 />
+        </section>
+
+        <section>
+            <h1>Abstract algorithm (Circles)</h1>
+            <Agent3 />
+        </section>
+    </main>
+</template>
 
 <style scoped></style>
