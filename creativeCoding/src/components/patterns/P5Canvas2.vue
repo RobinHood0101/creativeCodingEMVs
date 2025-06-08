@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import p5 from 'p5';
+import p5 from "p5";
 
 export default {
-    name: 'P5Canvas2',
+    name: "P5Canvas2",
     mounted() {
         this.createCanvas();
     },
@@ -26,15 +26,11 @@ export default {
             };
 
             p.draw = () => {
-                p.noFill()
+                p.noFill();
                 p.square(p.mouseX, p.mouseY, p.random(10, 200));
             };
-
-            p.mousePressed = () => {
-                console.log("Mouse pressed");
-            }
-        }
-    }
+        },
+    },
 };
 </script>
 
