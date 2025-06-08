@@ -162,14 +162,14 @@ export default {
         generateWordMap(uniqueWords, text) {
             let numberOfWords = []; // [["Word", 2], ["Word2", 1]]
             const words = text
-                .replace(/[.,!?]/g, "") // Satzzeichen entfernen
+                .replace(/[.,!?]/g, "")
                 .trim()
-                .split(/\s+/); // Nach Leerzeichen splitten
+                .split(/\s+/);
 
             for (let i = 0; i < uniqueWords.length; i++) {
                 let currentWord = uniqueWords[i];
                 let countForWord = 1;
-                // wie viel mal kommt wort in text vor
+
                 for (let z = 0; z < words.length; z++) {
                     if (currentWord === words[z]) {
                         countForWord++;
@@ -191,7 +191,7 @@ export default {
 
             // Draw Word Map
             if (this.p) {
-                this.p.remove(); // entfernt alten Sketch
+                this.p.remove();
             }
             this.p = new p5(this.sketch, this.$refs.wordmap);
         },
@@ -200,7 +200,7 @@ export default {
                 p.createCanvas(600, 400);
                 p.background(255);
 
-                // maximale Anzahl aus topWords bestimmen
+                // determine the maximum number of topWords
                 const maxCount = Math.max(...this.topWords.map(([_, count]) => count));
 
                 for (let i = 0; i < this.topWords.length; i++) {
